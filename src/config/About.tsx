@@ -3,9 +3,9 @@ import JavaScript from '@/components/technologies/JavaScript';
 import MongoDB from '@/components/technologies/MongoDB';
 import NextJs from '@/components/technologies/NextJs';
 import NodeJs from '@/components/technologies/NodeJs';
-import PostgreSQL from '@/components/technologies/PostgreSQL';
 import Prisma from '@/components/technologies/Prisma';
 import ReactIcon from '@/components/technologies/ReactIcon';
+import PostgreSQL from '@/components/technologies/SQL';
 import TypeScript from '@/components/technologies/TypeScript';
 
 export const mySkills = [
@@ -21,6 +21,6 @@ export const mySkills = [
 ];
 
 export const about = {
-  name: 'Ramkrishna Swarnkar',
-  description: `I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.`,
+  name: 'Bhavesh Chawre',
+  description: `I design and build bold web experiences where creativity meets code. Crafting sleek interfaces, fast websites, and immersive digital spaces that turn ideas into powerful online presence.`,
 };

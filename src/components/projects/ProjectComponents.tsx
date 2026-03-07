@@ -4,9 +4,9 @@ import MongoDB from '@/components/technologies/MongoDB';
 // Import technology components
 import NextJs from '@/components/technologies/NextJs';
 import NodeJs from '@/components/technologies/NodeJs';
-import PostgreSQL from '@/components/technologies/PostgreSQL';
 import Prisma from '@/components/technologies/Prisma';
 import ReactIcon from '@/components/technologies/ReactIcon';
+import PostgreSQL from '@/components/technologies/SQL';
 import TypeScript from '@/components/technologies/TypeScript';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';

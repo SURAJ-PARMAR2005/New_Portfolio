@@ -122,37 +122,37 @@ export const socialLinks = [
   },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ramxcodes/',
+    href: 'https://www.linkedin.com/in/bhavesh-chawre/',
     icon: <LinkedIn />,
   },
   {
     name: 'Github',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://www.instagram.com/bhaavesssh/',
     icon: <Github />,
   },
   {
     name: 'Instagram',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://github.com/bhave5h',
     icon: <Instagram />,
   },
   {
     name: 'Pinterest',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://in.pinterest.com/bha4ve5h/',
     icon: <Pinterest />,
   },
   {
     name: 'Dribble',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://dribbble.com/bh4ve5h-spam',
     icon: <Dribble />,
   },
   {
     name: 'Youtube',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://www.youtube.com/@Bhavesh.Archive',
     icon: <Youtube />,
   },
   {
     name: 'Behance',
-    href: 'https://github.com/ramxcodes',
+    href: 'https://www.behance.net/bhaveshchawre1',
     icon: <Behance />,
   },
 ];
