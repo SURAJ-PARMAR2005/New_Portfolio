@@ -12,11 +12,12 @@ import { Spline } from 'lucide-react';
 
 export const projects: Project[] = [
   {
-    title: 'Stock Market Training Institute Website',
+    title: 'Trading Institute Website',
     description:
-      'A premium educational website for a stock market training institute showcasing courses, mentorship programs, learning resources, and enrollment workflows with a modern responsive UI.',
+      'Premium stock market institute website showcasing courses, mentorship, resources, and enrollment.',
     image: '/project/nm.png',
-    video: '',
+    video:
+      'https://ik.imagekit.io/bhavesssh/Project_vid/nm.mp4?updatedAt=1772974351594',
     link: 'https://nishantmendhe-stockclasses.vercel.app/',
     technologies: [
       { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
@@ -32,11 +33,12 @@ export const projects: Project[] = [
     isWorking: false,
   },
   {
-    title: 'BigTopSocial – Digital Marketing Agency Website',
+    title: 'BigTopSocial',
     description:
       'A modern agency website built for BigTopSocial, showcasing services and other details.',
     image: '/project/bts.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/appwrite.mp4',
+    video:
+      'https://ik.imagekit.io/bhavesssh/Project_vid/BTS.mp4?updatedAt=1772974450891',
     link: '',
     technologies: [
       { name: 'Next.js', icon: <NextJs key="nextjs" /> },
@@ -56,9 +58,10 @@ export const projects: Project[] = [
   {
     title: 'IMDBully – Movie Taste Roaster',
     description:
-      'A fun AI-powered web app that analyzes your favorite movies and brutally roasts your taste with sarcastic commentary, turning IMDb preferences into chaotic entertainment.',
+      'A Fun AI-powered app that roasts your movie taste with sarcastic commentary.',
     image: '/project/imdb.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/appwrite.mp4',
+    video:
+      'https://ik.imagekit.io/bhavesssh/Project_vid/IMdb.mp4?updatedAt=1772974474977',
     link: '',
     technologies: [
       { name: 'Next.js', icon: <NextJs key="nextjs" /> },
@@ -78,7 +81,8 @@ export const projects: Project[] = [
     description:
       'Interactive developer portfolio inspired by Jackie Zhang’s award-winning design.',
     image: '/project/p.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/appwrite.mp4',
+    video:
+      'https://ik.imagekit.io/bhavesssh/Project_vid/P.mp4?updatedAt=1772974430470',
     link: '',
     technologies: [
       { name: 'Next.js', icon: <NextJs key="nextjs" /> },
@@ -99,7 +103,8 @@ export const projects: Project[] = [
     description:
       'Luxury car dealership website showcasing premium pre-owned vehicles.',
     image: '/project/rdl.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/appwrite.mp4',
+    video:
+      'https://ik.imagekit.io/bhavesssh/Project_vid/RDL.mp4?updatedAt=1772974434923',
     link: 'https://rdl-six.vercel.app/',
     technologies: [
       { name: 'Next.js', icon: <NextJs key="nextjs" /> },
@@ -120,7 +125,7 @@ export const projects: Project[] = [
     description:
       'AI-powered farming assistant for crop guidance and disease detection.',
     image: '/project/khetai.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/appwrite.mp4',
+    video: '',
     link: '',
     technologies: [
       { name: 'Next.js', icon: <NextJs key="nextjs" /> },
@@ -140,7 +145,8 @@ export const projects: Project[] = [
     title: 'ROBO – Interactive 3D Robot Hero Section',
     description: 'Interactive hero section featuring a 3D robot using Spline.',
     image: '/project/robo.png',
-    video: 'https://ik.imagekit.io/hokb3mrdr/appwrite.mp4',
+    video:
+      'https://ik.imagekit.io/bhavesssh/Project_vid/robo.mp4?updatedAt=1772974378474',
     link: '',
     technologies: [
       { name: 'React', icon: <ReactIcon key="react" /> },
@@ -148,6 +154,27 @@ export const projects: Project[] = [
       { name: 'Spline', icon: <Spline key="spline" /> },
     ],
     github: 'https://github.com/bhave5h/ROBO',
+    live: '',
+    details: true,
+    projectDetailsPageSlug: '/projects/a',
+    isWorking: true,
+  },
+  {
+    title: 'TeamTrack – Team Collaboration Dashboard',
+    description:
+      'Minimal dashboard for managing teams, tasks, and collaboration.',
+    image: '/project/tt.png',
+    video:
+      'https://ik.imagekit.io/bhavesssh/Project_vid/TT.mp4?updatedAt=1772974436123',
+    link: '',
+    technologies: [
+      { name: 'Next.js', icon: <NextJs key="nextjs" /> },
+      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
+      { name: 'React', icon: <ReactIcon key="react" /> },
+      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
+      { name: 'Vercel', icon: <Vercel key="vercel" /> },
+    ],
+    github: 'https://github.com/bhave5h/Team-Track',
     live: '',
     details: true,
     projectDetailsPageSlug: '/projects/a',
