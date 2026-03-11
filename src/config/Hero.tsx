@@ -116,6 +116,11 @@ export const heroConfig = {
 // Social Links Configuration
 export const socialLinks = [
   {
+    name: 'Github',
+    href: 'https://github.com/bhave5h',
+    icon: <Github />,
+  },
+  {
     name: 'Email',
     href: 'mailto:bhaveshchawre1@gmail.com',
     icon: <Mail />,
@@ -126,13 +131,8 @@ export const socialLinks = [
     icon: <LinkedIn />,
   },
   {
-    name: 'Github',
-    href: 'https://www.instagram.com/bhaavesssh/',
-    icon: <Github />,
-  },
-  {
     name: 'Instagram',
-    href: 'https://github.com/bhave5h',
+    href: 'https://www.instagram.com/bhaavesssh/',
     icon: <Instagram />,
   },
   {

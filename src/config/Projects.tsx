@@ -79,7 +79,7 @@ export const projects: Project[] = [
   {
     title: 'Developer Portfolio – Jackie Zhang Inspired UI',
     description:
-      'Interactive developer portfolio inspired by Jackie Zhang’s award-winning design.',
+      'Interactive developer portfolio inspired by Jackie Zhang’s Portfolio.',
     image: '/project/p.png',
     video:
       'https://ik.imagekit.io/bhavesssh/Project_vid/P.mp4?updatedAt=1772974430470',
