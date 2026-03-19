@@ -338,6 +338,7 @@ const ChatBubble: React.FC = () => {
                       </div>
                     </div>
                     <p
+                      suppressHydrationWarning
                       className={cn(
                         'mt-1 text-xs',
                         message.sender === 'user'
