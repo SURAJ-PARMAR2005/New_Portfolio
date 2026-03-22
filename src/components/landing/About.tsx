@@ -13,16 +13,16 @@ export default function About() {
       {/* About me */}
       <div className="mt-8 flex flex-col gap-4 md:flex-row">
         <Image
-          src="/assets/logo.png"
+          src="/assets/Me.png"
           alt="About"
-          width={100}
-          height={100}
+          width={150}
+          height={150}
           className="border-secondary size-60 rounded-md border-2 bg-blue-300 dark:bg-yellow-300"
         />
-        <div className="mt-4">
+        <div className="mt-0">
           <h3 className="text-2xl font-bold">{about.name}</h3>
-          <p className="text-secondary mt-4">{about.description}</p>
-          <p className="text-secondary mt-8 font-bold">Skills</p>
+          <p className="text-secondary mt-5">{about.description}</p>
+          <p className="text-secondary mt-5 font-bold">My Skills</p>
           <div className="flex flex-wrap gap-2">
             {mySkills.map((skill) => (
               <Tooltip key={skill.key}>
