@@ -30,6 +30,8 @@ import Instagram from '@/components/svgs/Instagram';
 import LinkedIn from '@/components/svgs/LinkedIn';
 import Mail from '@/components/svgs/Mail';
 import Pinterest from '@/components/svgs/Pin';
+import Threads from '@/components/svgs/Threads';
+import X from '@/components/svgs/X';
 import Youtube from '@/components/svgs/Youtube';
 import CSS from '@/components/technologies/CSS';
 import Canva from '@/components/technologies/Canva';
@@ -126,6 +128,11 @@ export const socialLinks = [
     icon: <Mail />,
   },
   {
+    name: 'X',
+    href: 'https://x.com/BH4VE5H',
+    icon: <X />,
+  },
+  {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/bhavesh-chawre/',
     icon: <LinkedIn />,
@@ -149,6 +156,11 @@ export const socialLinks = [
     name: 'Youtube',
     href: 'https://www.youtube.com/@Bhavesh.Archive',
     icon: <Youtube />,
+  },
+  {
+    name: 'Threads',
+    href: 'https://www.threads.com/@bha4ve5h',
+    icon: <Threads />,
   },
   {
     name: 'Behance',
