@@ -132,7 +132,7 @@ export function ProjectContent({ frontmatter, content }: ProjectContentProps) {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  <Github className="size-4" />
+                  <Github />
                   Source Code
                 </Link>
               </Button>
