@@ -1,3 +1,5 @@
+'use client';
+
 import { heroConfig, skillComponents, socialLinks } from '@/config/Hero';
 import { parseTemplate } from '@/lib/hero';
 import { cn } from '@/lib/utils';
@@ -9,6 +11,7 @@ import Container from '../common/Container';
 import Skill from '../common/Skill';
 import CV from '../svgs/CV';
 import Chat from '../svgs/Chat';
+import DecryptedText from '../ui/DecryptedText';
 import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
@@ -18,11 +21,13 @@ const buttonIcons = {
 };
 
 export default function Hero() {
-  const { name, title, avatar, skills, description, buttons } = heroConfig;
+  const { name, title1, title2, title3, avatar, skills, description, buttons } =
+    heroConfig;
+  const titles = [title1, title2, title3].filter(Boolean);
+  const [titleIndex, setTitleIndex] = React.useState(0);
 
   const renderDescription = () => {
     const parts = parseTemplate(description.template, skills);
-
     return parts.map((part) => {
       if (part.type === 'skill' && 'skill' in part && part.skill) {
         const SkillComponent =
@@ -57,14 +62,25 @@ export default function Hero() {
         alt="hero"
         width={100}
         height={100}
-        className="size-24 rounded-full bg-blue-300 dark:bg-white"
+        className="size-28 rounded-full"
       />
 
       {/* Text Area */}
       <div className="mt-8 flex flex-col gap-2">
-        <h1 className="text-4xl font-bold">
-          Hi, I&apos;m {name} — <span className="text-secondary">{title}</span>
-        </h1>
+        <h1 className="text-4xl font-bold">Hi, I&apos;m {name}</h1>
+        <div
+          className="w-fit cursor-pointer"
+          onMouseEnter={() =>
+            setTitleIndex((prev) => (prev + 1) % titles.length)
+          }
+        >
+          <DecryptedText
+            text={titles[titleIndex]}
+            animateOn="view"
+            className="text-secondary text-4xl font-bold"
+            encryptedClassName="text-4xl font-bold text-secondary"
+          />
+        </div>
 
         <div className="mt-4 text-base leading-[2.5] text-neutral-500 md:text-lg">
           {renderDescription()}
