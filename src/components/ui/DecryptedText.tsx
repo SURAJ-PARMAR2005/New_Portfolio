@@ -27,7 +27,7 @@ export default function DecryptedText({
   maxIterations = 10,
   sequential = true,
   revealDirection = 'start',
-  useOriginalCharsOnly = false,
+  useOriginalCharsOnly = true,
   characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
   className = 'text-4xl font-bold',
   parentClassName = '',
