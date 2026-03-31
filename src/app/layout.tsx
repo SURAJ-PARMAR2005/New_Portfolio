@@ -6,6 +6,7 @@ import OnekoCat from '@/components/common/OnekoCat';
 import { Quote } from '@/components/common/Quote';
 import { ThemeProvider } from '@/components/common/ThemeProviders';
 import { generateMetadata as getMetadata } from '@/config/Meta';
+import { Analytics } from '@vercel/analytics/next';
 import ReactLenis from 'lenis/react';
 import { ViewTransitions } from 'next-view-transitions';
 
@@ -31,6 +32,7 @@ export default function RootLayout({
             <ReactLenis root>
               <Navbar />
               {children}
+              <Analytics />
               <OnekoCat />
               <Quote />
               <Footer />
