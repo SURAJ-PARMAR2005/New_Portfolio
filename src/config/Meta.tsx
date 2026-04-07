@@ -112,6 +112,21 @@ export const pageMetadata: Record<string, PageMeta> = {
     twitterCard: 'summary_large_image',
   },
 
+  '/designs': {
+    title: 'Designs - Graphic Design & Digital Marketing',
+    description:
+      'Explore my designs and work across different fields and domains.',
+    keywords: [
+      'designs',
+      'digital marketing',
+      'social media',
+      'branding',
+      'graphic design',
+    ],
+    ogImage: '/meta/design.png',
+    twitterCard: 'summary_large_image',
+  },
+
   // Resume page
   '/resume': {
     title: 'Resume - Professional CV',

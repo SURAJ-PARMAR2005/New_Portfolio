@@ -47,7 +47,9 @@ export default function DesignsPage() {
 
         <Separator />
 
-        <h2 className="text-2xl font-semibold">Branding Identity & Toolkits</h2>
+        <h2 className="text-2xl font-semibold">
+          Branding Identity & Toolkits - Comming Soon
+        </h2>
       </div>
     </Container>
   );
