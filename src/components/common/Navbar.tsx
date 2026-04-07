@@ -8,10 +8,9 @@ import { ThemeToggleButton } from './ThemeSwitch';
 
 export default function Navbar() {
   return (
-    <Container className="sticky top-0 z-20 rounded-md py-4 backdrop-blur-sm">
-      <div className="flex items-center justify-between px-6">
+    <Container className="sticky top-0 z-20 rounded-md py-4 backdrop-blur-md">
+      <div className="flex items-center justify-between px-4">
         <div className="flex items-baseline gap-4">
-          <Link href="/"></Link>
           <div className="flex items-center justify-center gap-4">
             {navbarConfig.navItems.map((item) => (
               <Link
