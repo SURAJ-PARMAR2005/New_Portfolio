@@ -12,15 +12,15 @@ export interface PageMeta {
 // Base site configuration
 export const siteConfig = {
   name: heroConfig.name,
-  title: 'Bhavesh Portfolio',
-  description: 'Simple Portfolio',
-  url: process.env.NEXT_PUBLIC_URL || 'https://www.bhaavesssh.me',
+  title: 'Suraj Parmar Portfolio',
+  description: 'Fullstack Developer Portfolio',
+  url: process.env.NEXT_PUBLIC_URL || 'https://www.surajparmar.me',
   ogImage: '/meta/opengraph-image.png',
   author: {
     name: about.name,
     github: 'bhave5h',
     linkedin: 'bhaveshchawre',
-    email: 'bhaveshchawre1@gmail.com',
+    email: 'surajparmar058@gmail.com',
   },
   keywords: [
     'portfolio',
@@ -60,7 +60,7 @@ export const pageMetadata: Record<string, PageMeta> = {
     description:
       "Get in touch with me for collaborations, projects, or opportunities. I'd love to hear from you!",
     keywords: ['contact', 'hire', 'collaboration', 'freelance', 'developer'],
-    ogImage: '/assets/logo.png',
+    ogImage: '/assets/logo-round.png',
     twitterCard: 'summary',
   },
 
@@ -194,6 +194,11 @@ export function generateMetadata(pathname: string) {
     keywords: pageMeta.keywords?.join(', '),
     authors: [{ name: siteConfig.author.name }],
     creator: siteConfig.author.name,
+    icons: {
+      icon: '/assets/logo-round.png',
+      shortcut: '/assets/logo-round.png',
+      apple: '/assets/logo-round.png',
+    },
     openGraph: {
       type: 'website',
       url: `${siteConfig.url}${pathname}`,

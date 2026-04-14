@@ -1,6 +1,5 @@
 import Container from '@/components/common/Container';
 import About from '@/components/landing/About';
-import Experience from '@/components/landing/Experience';
 import Github from '@/components/landing/Github';
 import Hero from '@/components/landing/Hero';
 // import Blog from '@/components/landing/Blog';
@@ -15,7 +14,6 @@ export default function page() {
   return (
     <Container className="min-h-screen pt-4 pb-16 md:pt-8">
       <Hero />
-      <Experience />
       <Work />
       <About />
       <Github />

@@ -1,183 +1,90 @@
-import FramerMotion from '@/components/technologies/FramerMotion';
-import Github from '@/components/technologies/Github';
-import NextJs from '@/components/technologies/NextJs';
-import Python from '@/components/technologies/Python';
 import ReactIcon from '@/components/technologies/ReactIcon';
-import Shadcn from '@/components/technologies/Shadcn';
-import TailwindCss from '@/components/technologies/TailwindCss';
+import NodeJs from '@/components/technologies/NodeJs';
+import MongoDB from '@/components/technologies/MongoDB';
+import ExpressJs from '@/components/technologies/ExpressJs';
+import JavaScript from '@/components/technologies/JavaScript';
 import TypeScript from '@/components/technologies/TypeScript';
-import Vercel from '@/components/technologies/Vercel';
+import TailwindCss from '@/components/technologies/TailwindCss';
+import Code from '@/components/svgs/Code';
 import { Project } from '@/types/project';
-import { Spline } from 'lucide-react';
 
 export const projects: Project[] = [
   {
-    title: 'Trading Institute Website',
-    description:
-      'Premium stock market institute website showcasing courses, mentorship, resources, and enrollment.',
-    image: '/project/nm.png',
-    video:
-      'https://ik.imagekit.io/bhavesssh/Project_vid/nm.mp4?updatedAt=1772974351594',
-    link: 'https://nishantmendhe-stockclasses.vercel.app/',
+    title: 'Food Delivery Website',
+    description: 'A full-stack food delivery platform with an integrated ordering system.',
+    image: '/project/food-delivery.png',
+    video: '/project/FOOD_DEL_VIDEO.mp4',
+    link: 'https://food-del-frontend-cngi.onrender.com/',
     technologies: [
-      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
+      { name: 'JavaScript', icon: <JavaScript key="js" /> },
       { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'Framer Motion', icon: <FramerMotion key="framer" /> },
-      { name: 'Vercel', icon: <Vercel key="vercel" /> },
+      { name: 'Node.js', icon: <NodeJs key="node" /> },
+      { name: 'Express.js', icon: <ExpressJs key="express" /> },
+      { name: 'MongoDB', icon: <MongoDB key="mongo" /> },
     ],
-    github: 'https://github.com/bhave5h/nishantmendhe-stockclasses',
-    live: 'https://nishantmendhe-stockclasses.vercel.app/',
+    github: 'https://github.com/SURAJ-PARMAR2005/food_delivery_website',
+    live: 'https://food-del-frontend-cngi.onrender.com/',
     details: false,
-    projectDetailsPageSlug: '/projects/a',
-    isWorking: false,
-  },
-  {
-    title: 'BigTopSocial',
-    description:
-      'A modern agency website built for BigTopSocial, showcasing services and other details.',
-    image: '/project/bts.png',
-    video:
-      'https://ik.imagekit.io/bhavesssh/Project_vid/BTS.mp4?updatedAt=1772974450891',
-    link: '',
-    technologies: [
-      { name: 'Next.js', icon: <NextJs key="nextjs" /> },
-      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
-      { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'Vercel', icon: <Vercel key="vercel" /> },
-      { name: 'Framer Motion', icon: <FramerMotion key="framer" /> },
-      { name: 'GitHub', icon: <Github key="github" /> },
-    ],
-    github: 'https://github.com/bhave5h/BTS',
-    live: '',
-    details: false,
-    projectDetailsPageSlug: '/projects/a',
+    projectDetailsPageSlug: '',
     isWorking: true,
   },
   {
-    title: 'IMDBully – Movie Taste Roaster',
-    description:
-      'A Fun AI-powered app that roasts your movie taste with sarcastic commentary.',
-    image: '/project/imdb.png',
-    video:
-      'https://ik.imagekit.io/bhavesssh/Project_vid/IMdb.mp4?updatedAt=1772974474977',
-    link: '',
+    title: 'Smart Classroom Monitoring System',
+    description: 'An IoT-based classroom monitoring dashboard bringing real-time statistics.',
+    image: '/project/smart-classroom.png',
+    video: '/project/Smart_classRoom_video.mp4',
+    link: 'https://smart-classroom-k973.onrender.com/',
     technologies: [
-      { name: 'Next.js', icon: <NextJs key="nextjs" /> },
-      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
       { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'Vercel', icon: <Vercel key="vercel" /> },
+      { name: 'TypeScript', icon: <TypeScript key="ts" /> },
+      { name: 'Node.js', icon: <NodeJs key="node" /> },
+      { name: 'Express.js', icon: <ExpressJs key="express" /> },
+      { name: 'Supabase', icon: <Code key="supa" /> },
+      { name: 'ESP32', icon: <Code key="esp" /> },
     ],
-    github: 'https://github.com/bhave5h/IMDBully',
-    live: '',
+    github: 'https://github.com/SURAJ-PARMAR2005/Smart_ClassRoom',
+    live: 'https://smart-classroom-k973.onrender.com/',
     details: false,
-    projectDetailsPageSlug: '/projects/a',
-    isWorking: false,
-  },
-  {
-    title: 'Developer Portfolio – Jackie Zhang Inspired UI',
-    description:
-      'Interactive developer portfolio inspired by Jackie Zhang’s Portfolio.',
-    image: '/project/p.png',
-    video:
-      'https://ik.imagekit.io/bhavesssh/Project_vid/P.mp4?updatedAt=1772974430470',
-    link: '',
-    technologies: [
-      { name: 'Next.js', icon: <NextJs key="nextjs" /> },
-      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
-      { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'Framer Motion', icon: <FramerMotion key="framer" /> },
-      { name: 'Vercel', icon: <Vercel key="vercel" /> },
-    ],
-    github: 'https://github.com/bhave5h/Portfolio',
-    live: '',
-    details: false,
-    projectDetailsPageSlug: '/projects/a',
-    isWorking: false,
-  },
-  {
-    title: 'Rich Drive Luxury – Premium Car Dealership Website',
-    description:
-      'Luxury car dealership website showcasing premium pre-owned vehicles.',
-    image: '/project/rdl.png',
-    video:
-      'https://ik.imagekit.io/bhavesssh/Project_vid/RDL.mp4?updatedAt=1772974434923',
-    link: 'https://rdl-six.vercel.app/',
-    technologies: [
-      { name: 'Next.js', icon: <NextJs key="nextjs" /> },
-      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
-      { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'shadcn/ui', icon: <Shadcn key="shadcn" /> },
-      { name: 'Vercel', icon: <Vercel key="vercel" /> },
-    ],
-    github: 'https://github.com/bhave5h/RDL',
-    live: '',
-    details: false,
-    projectDetailsPageSlug: '/projects/a',
+    projectDetailsPageSlug: '',
     isWorking: true,
   },
   {
-    title: 'KhetAI – Smart Farming Assistant',
-    description:
-      'AI-powered farming assistant for crop guidance and disease detection.',
-    image: '/project/khetai.png',
-    video: '',
-    link: '',
+    title: 'Solo Leveling Habit Tracker',
+    description: 'Gamified habit tracker inspired by Solo Leveling to boost daily productivity.',
+    image: '/project/habit-tracker.png',
+    video: '/project/SOLO_LEVELLING_VIDEO.mp4',
+    link: 'https://habbit-tracker-1-bmuo.onrender.com/',
     technologies: [
-      { name: 'Next.js', icon: <NextJs key="nextjs" /> },
-      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
       { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'Python', icon: <Python key="python" /> },
-      { name: 'Vercel', icon: <Vercel key="vercel" /> },
+      { name: 'Node.js', icon: <NodeJs key="node" /> },
+      { name: 'Express.js', icon: <ExpressJs key="express" /> },
+      { name: 'MongoDB', icon: <MongoDB key="mongo" /> },
+      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwind" /> },
+      { name: 'JWT', icon: <Code key="jwt" /> },
     ],
-    github: 'https://github.com/bhave5h/khet-ai',
-    live: 'https://khet-ai-alpha.vercel.app/',
+    github: 'https://github.com/SURAJ-PARMAR2005/Habbit_tracker',
+    live: 'https://habbit-tracker-1-bmuo.onrender.com/',
     details: false,
-    projectDetailsPageSlug: '/projects/a',
+    projectDetailsPageSlug: '',
     isWorking: true,
   },
   {
-    title: 'ROBO – Interactive 3D Robot Hero Section',
-    description: 'Interactive hero section featuring a 3D robot using Spline.',
-    image: '/project/robo.png',
-    video:
-      'https://ik.imagekit.io/bhavesssh/Project_vid/robo.mp4?updatedAt=1772974378474',
-    link: '',
+    title: 'Medical Summarizer',
+    description: 'AI-powered tool synthesizing long medical reports into readable summaries.',
+    image: '/project/medical-summarizer.png',
+    video: '/project/MEDICAL_SUMMARISER_REPORT.mp4',
+    link: 'https://medical-summarizer-o9iw.onrender.com/',
     technologies: [
       { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'Spline', icon: <Spline key="spline" /> },
+      { name: 'JavaScript', icon: <JavaScript key="js" /> },
+      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwind" /> },
+      { name: 'Supabase', icon: <Code key="supa" /> },
+      { name: 'Gemini API', icon: <Code key="gemini" /> },
     ],
-    github: 'https://github.com/bhave5h/ROBO',
-    live: '',
+    github: 'https://github.com/SURAJ-PARMAR2005/Hack_LLM2',
+    live: 'https://medical-summarizer-o9iw.onrender.com/',
     details: false,
-    projectDetailsPageSlug: '/projects/a',
-    isWorking: true,
-  },
-  {
-    title: 'TeamTrack – Team Collaboration Dashboard',
-    description:
-      'Minimal dashboard for managing teams, tasks, and collaboration.',
-    image: '/project/tt.png',
-    video:
-      'https://ik.imagekit.io/bhavesssh/Project_vid/TT.mp4?updatedAt=1772974436123',
-    link: '',
-    technologies: [
-      { name: 'Next.js', icon: <NextJs key="nextjs" /> },
-      { name: 'TypeScript', icon: <TypeScript key="typescript" /> },
-      { name: 'React', icon: <ReactIcon key="react" /> },
-      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwindcss" /> },
-      { name: 'Vercel', icon: <Vercel key="vercel" /> },
-    ],
-    github: 'https://github.com/bhave5h/Team-Track',
-    live: '',
-    details: false,
-    projectDetailsPageSlug: '/projects/a',
+    projectDetailsPageSlug: '',
     isWorking: true,
   },
 ];
