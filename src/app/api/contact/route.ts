@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 import * as z from 'zod';
 
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>();
@@ -123,6 +124,45 @@ ${data.message.trim()}
   }
 }
 
+async function sendEmail(data: {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}): Promise<boolean> {
+  try {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER, // you receive it
+      subject: `New Contact Form Submission from ${data.name}`,
+      html: `
+        <h2>New Contact Form Message</h2>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Phone:</strong> ${data.phone}</p>
+        <p><strong>Message:</strong></p>
+        <p>${data.message}</p>
+        <hr />
+        <p><small>Sent at: ${new Date().toLocaleString()}</small></p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+    return true;
+  } catch (error) {
+    console.error('Email error:', error);
+    return false;
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const clientIP = getClientIP(request);
@@ -148,9 +188,12 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = contactSchema.parse(body);
 
-    const telegramSent = await sendToTelegram(validatedData);
+    const [telegramSent, emailSent] = await Promise.all([
+      sendToTelegram(validatedData),
+      sendEmail(validatedData),
+    ]);
 
-    if (!telegramSent) {
+    if (!telegramSent && !emailSent) {
       return NextResponse.json(
         { error: 'Failed to send message. Please try again.' },
         { status: 500 },
