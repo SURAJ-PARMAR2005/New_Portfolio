@@ -18,8 +18,8 @@ export const siteConfig = {
   ogImage: '/meta/opengraph-image.png',
   author: {
     name: about.name,
-    github: 'bhave5h',
-    linkedin: 'bhaveshchawre',
+    github: 'SURAJ-PARMAR2005',
+    linkedin: 'surajparmar',
     email: 'surajparmar058@gmail.com',
   },
   keywords: [

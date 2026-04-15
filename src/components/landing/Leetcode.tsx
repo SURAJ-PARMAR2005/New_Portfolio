@@ -1,6 +1,6 @@
 'use client';
 
-import { githubConfig } from '@/config/Github';
+import { leetcodeConfig } from '@/config/Leetcode';
 import { useTheme } from 'next-themes';
 import { Link } from 'next-view-transitions';
 import dynamic from 'next/dynamic';
@@ -9,7 +9,7 @@ import type { ThemeInput } from 'react-activity-calendar';
 import useSWR from 'swr';
 
 import Container from '../common/Container';
-import GithubIcon from '../svgs/Github';
+import LeetcodeIcon from '../svgs/Leetcode';
 import { Button } from '../ui/button';
 
 const ActivityCalendar = dynamic(
@@ -23,35 +23,31 @@ type ContributionItem = {
   level: 0 | 1 | 2 | 3 | 4;
 };
 
-type GitHubContributionResponse = {
-  date: string;
-  contributionCount: number;
-  contributionLevel:
-    | 'NONE'
-    | 'FIRST_QUARTILE'
-    | 'SECOND_QUARTILE'
-    | 'THIRD_QUARTILE'
-    | 'FOURTH_QUARTILE';
-};
+// Generate an array of all days in the past 365 days
+function generateLastYear(): ContributionItem[] {
+  const contributions: ContributionItem[] = [];
+  const today = new Date();
 
-// Helper function to filter contributions to past year
-function filterLastYear(contributions: ContributionItem[]): ContributionItem[] {
-  const oneYearAgo = new Date();
-  oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-
-  return contributions.filter((item) => {
-    const itemDate = new Date(item.date);
-    return itemDate >= oneYearAgo;
-  });
+  for (let i = 365; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(today.getDate() - i);
+    const dateString = date.toISOString().split('T')[0];
+    contributions.push({
+      date: dateString,
+      count: 0,
+      level: 0,
+    });
+  }
+  return contributions;
 }
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function Github() {
+export default function Leetcode() {
   const { theme } = useTheme();
 
   const { data, error, isLoading } = useSWR(
-    `${githubConfig.apiUrl}/${githubConfig.username}.json`,
+    `${leetcodeConfig.apiUrl}/${leetcodeConfig.username}/calendar`,
     fetcher,
     { revalidateOnFocus: false },
   );
@@ -61,70 +57,60 @@ export default function Github() {
       return { contributions: [], totalContributions: 0, hasError: true };
     if (!data)
       return { contributions: [], totalContributions: 0, hasError: false };
+    if (!data.submissionCalendar)
+      return { contributions: [], totalContributions: 0, hasError: true };
 
-    if (data?.contributions && Array.isArray(data.contributions)) {
-      // Flatten the nested array structure
-      const flattenedContributions = data.contributions.flat();
+    try {
+      const calendarData = JSON.parse(data.submissionCalendar);
+      const baseCalendar = generateLastYear();
+      const calendarMap = new Map(
+        baseCalendar.map((item) => [item.date, item]),
+      );
 
-      // Convert contribution levels to numbers
-      const contributionLevelMap = {
-        NONE: 0,
-        FIRST_QUARTILE: 1,
-        SECOND_QUARTILE: 2,
-        THIRD_QUARTILE: 3,
-        FOURTH_QUARTILE: 4,
+      let total = 0;
+
+      Object.entries(calendarData).forEach(([timestamp, count]) => {
+        // LeetCode timestamp is in seconds
+        const date = new Date(Number(timestamp) * 1000);
+        const dateString = date.toISOString().split('T')[0];
+
+        if (calendarMap.has(dateString)) {
+          const item = calendarMap.get(dateString)!;
+          const submissions = Number(count);
+          item.count = submissions;
+          total += submissions;
+
+          let level: 0 | 1 | 2 | 3 | 4 = 0;
+          if (submissions > 0) level = 1;
+          if (submissions >= 2) level = 2;
+          if (submissions >= 5) level = 3;
+          if (submissions >= 10) level = 4;
+          item.level = level;
+        }
+      });
+
+      return {
+        contributions: Array.from(calendarMap.values()),
+        totalContributions: total,
+        hasError: false,
       };
-
-      // Transform to the expected format
-      const validContributions = flattenedContributions
-        .filter(
-          (item: unknown): item is GitHubContributionResponse =>
-            typeof item === 'object' &&
-            item !== null &&
-            'date' in item &&
-            'contributionCount' in item &&
-            'contributionLevel' in item,
-        )
-        .map((item: GitHubContributionResponse) => ({
-          date: String(item.date),
-          count: Number(item.contributionCount || 0),
-          level: (contributionLevelMap[
-            item.contributionLevel as keyof typeof contributionLevelMap
-          ] || 0) as ContributionItem['level'],
-        }));
-
-      if (validContributions.length > 0) {
-        // Calculate total contributions
-        const total = validContributions.reduce(
-          (sum: number, item: ContributionItem) => sum + item.count,
-          0,
-        );
-
-        // Filter to show only the past year
-        const filteredContributions = filterLastYear(validContributions);
-
-        return {
-          contributions: filteredContributions,
-          totalContributions: total,
-          hasError: false,
-        };
-      }
+    } catch (err) {
+      console.error('Failed to parse LeetCode contributions:', err);
+      return { contributions: [], totalContributions: 0, hasError: true };
     }
-
-    return { contributions: [], totalContributions: 0, hasError: true };
   }, [data, error]);
 
   return (
-    <Container className="mt-20">
+    <Container className="mt-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-foreground text-2xl font-bold">
-              {githubConfig.title}
+              {leetcodeConfig.title}
             </h2>
             <p className="text-muted-foreground text-sm">
-              <b>{githubConfig.username}</b>&apos;s {githubConfig.subtitle}
+              <b>{leetcodeConfig.username}</b>&apos;s {leetcodeConfig.subtitle}
             </p>
             {!isLoading && !hasError && totalContributions > 0 && (
               <p className="text-primary mt-1 text-sm font-medium">
@@ -132,7 +118,7 @@ export default function Github() {
                 <span className="font-black">
                   {totalContributions.toLocaleString()}
                 </span>{' '}
-                contributions
+                submissions
               </p>
             )}
           </div>
@@ -144,26 +130,28 @@ export default function Github() {
             <div className="text-center">
               <div className="border-primary mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-t-transparent"></div>
               <p className="text-muted-foreground text-sm">
-                {githubConfig.loadingState.description}
+                {leetcodeConfig.loadingState.description}
               </p>
             </div>
           </div>
         ) : hasError || contributions.length === 0 ? (
           <div className="text-muted-foreground border-border rounded-xl border-2 border-dashed p-8 text-center">
             <div className="bg-muted mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
-              <GithubIcon />
+              <LeetcodeIcon />
             </div>
-            <p className="mb-2 font-medium">{githubConfig.errorState.title}</p>
+            <p className="mb-2 font-medium">
+              {leetcodeConfig.errorState.title}
+            </p>
             <p className="mb-4 text-sm">
-              {githubConfig.errorState.description}
+              {leetcodeConfig.errorState.description}
             </p>
             <Button variant="outline" asChild>
               <Link
-                href={`https://github.com/${githubConfig.username}`}
+                href={`https://leetcode.com/${leetcodeConfig.username}`}
                 className="inline-flex items-center gap-2"
               >
-                <GithubIcon />
-                {githubConfig.errorState.buttonText}
+                <LeetcodeIcon />
+                {leetcodeConfig.errorState.buttonText}
               </Link>
             </Button>
           </div>
@@ -175,17 +163,17 @@ export default function Github() {
                   data={contributions}
                   blockSize={10}
                   blockMargin={2.2}
-                  fontSize={githubConfig.fontSize}
+                  fontSize={leetcodeConfig.fontSize}
                   colorScheme={theme === 'dark' ? 'dark' : 'light'}
-                  maxLevel={githubConfig.maxLevel}
+                  maxLevel={leetcodeConfig.maxLevel}
                   hideTotalCount={true}
                   hideColorLegend={false}
                   hideMonthLabels={false}
-                  theme={githubConfig.theme as ThemeInput}
+                  theme={leetcodeConfig.theme as ThemeInput}
                   labels={{
-                    months: githubConfig.months,
-                    weekdays: githubConfig.weekdays,
-                    totalCount: githubConfig.totalCountLabel,
+                    months: leetcodeConfig.months,
+                    weekdays: leetcodeConfig.weekdays,
+                    totalCount: leetcodeConfig.totalCountLabel,
                   }}
                   style={{
                     color: 'rgb(139, 148, 158)',

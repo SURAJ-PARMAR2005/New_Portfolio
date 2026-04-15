@@ -8,8 +8,24 @@ import { generateMetadata as getMetadata } from '@/config/Meta';
 import { Analytics } from '@vercel/analytics/next';
 import ReactLenis from 'lenis/react';
 import { ViewTransitions } from 'next-view-transitions';
+import localFont from 'next/font/local';
 
 import './globals.css';
+
+const hankenGrotesk = localFont({
+  src: [
+    {
+      path: '../../public/fonts/HankenGrotesk-Variable.ttf',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/HankenGrotesk-Italic-Variable.ttf',
+      style: 'italic',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-hanken',
+});
 
 export const metadata = getMetadata('/');
 
@@ -21,7 +37,10 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
-        <body className={`font-hanken-grotesk antialiased`} suppressHydrationWarning>
+        <body
+          className={`${hankenGrotesk.className} antialiased`}
+          suppressHydrationWarning
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

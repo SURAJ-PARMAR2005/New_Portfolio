@@ -2,6 +2,7 @@ import Container from '@/components/common/Container';
 import About from '@/components/landing/About';
 import Github from '@/components/landing/Github';
 import Hero from '@/components/landing/Hero';
+import Leetcode from '@/components/landing/Leetcode';
 // import Blog from '@/components/landing/Blog';
 // import CTA from '@/components/landing/CTA';
 // import Journey from '@/components/landing/Journey';
@@ -17,6 +18,7 @@ export default function page() {
       <Work />
       <About />
       <Github />
+      <Leetcode />
       {/* <Blog />
       <CTA />
       <Setup />
