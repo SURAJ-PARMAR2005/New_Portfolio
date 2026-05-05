@@ -24,27 +24,27 @@
  * That's it! Your portfolio will automatically update with your information.
  */
 import Github from '@/components/svgs/Github';
+import Leetcode from '@/components/svgs/Leetcode';
 import LinkedIn from '@/components/svgs/LinkedIn';
 import Mail from '@/components/svgs/Mail';
-import Leetcode from '@/components/svgs/Leetcode';
 import CSS from '@/components/technologies/CSS';
 import Canva from '@/components/technologies/Canva';
-import Figma from '@/components/technologies/Figma';
-import Fm from '@/components/technologies/Fm';
-import NextJs from '@/components/technologies/NextJs';
-import ReactIcon from '@/components/technologies/ReactIcon';
-import TailwindCss from '@/components/technologies/TailwindCss';
-import MongoDB from '@/components/technologies/MongoDB';
-import NodeJs from '@/components/technologies/NodeJs';
-import ExpressJs from '@/components/technologies/ExpressJs';
-import Html from '@/components/technologies/Html';
-import JavaScript from '@/components/technologies/JavaScript';
-import Netlify from '@/components/technologies/Netlify';
 import Cpp from '@/components/technologies/Cpp';
 import Dsa from '@/components/technologies/Dsa';
-import Redis from '@/components/technologies/Redis';
+import ExpressJs from '@/components/technologies/ExpressJs';
+import Figma from '@/components/technologies/Figma';
+import Fm from '@/components/technologies/Fm';
+import Html from '@/components/technologies/Html';
+import JavaScript from '@/components/technologies/JavaScript';
+import MongoDB from '@/components/technologies/MongoDB';
+import Netlify from '@/components/technologies/Netlify';
+import NextJs from '@/components/technologies/NextJs';
+import NodeJs from '@/components/technologies/NodeJs';
 import Npm from '@/components/technologies/Npm';
+import ReactIcon from '@/components/technologies/ReactIcon';
+import Redis from '@/components/technologies/Redis';
 import Render from '@/components/technologies/Render';
+import TailwindCss from '@/components/technologies/TailwindCss';
 
 // Component mapping for skills
 export const skillComponents = {
@@ -74,7 +74,7 @@ export const heroConfig = {
   title1: 'A Fullstack Developer.',
   title2: 'A Backend Developer.',
   title3: 'A Web Developer.',
-  avatar: '/assets/logo-round.png',
+  avatar: '/assets/logo-rounded.png',
 
   // Skills Configuration
   skills: [
@@ -163,7 +163,7 @@ export const heroConfig = {
   // Description Configuration
   description: {
     template:
-      "I build things for the web — fast, functional, and shipped. {skills:0} and {skills:4} on the front, {skills:1} and {skills:6} on the back, {skills:2} in the middle. I've built an AI-powered medical tool, a real-time IoT dashboard, and a few things in between. 235+ LeetCode problems deep, still going. 3rd year B.Tech student by day. Developer by choice. Looking for an internship where I can stop building alone and start building something that matters.",
+      "I build things for the web — fast, functional, and shipped. {skills:0} and {skills:4} on the front, {skills:1} and {skills:6} on the back, {skills:2} in the middle. I've built an AI-powered medical tool, a real-time IoT dashboard, and a few things in between. 270+ LeetCode problems deep, still going. 3rd year B.Tech student by day. Developer by choice. Looking for an internship where I can stop building alone and start building something that matters.",
   },
 
   // Buttons Configuration
