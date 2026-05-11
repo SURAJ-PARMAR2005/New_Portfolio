@@ -38,5 +38,5 @@ export const mySkills = [
 
 export const about = {
   name: 'Suraj Parmar',
-  description: `I build things for the web — fast, functional, and shipped. React on the front, Node.js on the back, MongoDB in the middle. I've built an AI-powered medical tool, a real-time IoT dashboard, and a few things in between. 270+ LeetCode problems deep, still going.\n\n3rd year B.Tech student by day. Developer by choice. Looking for an internship where I can stop building alone and start building something that matters.`,
+  description: `I build things for the web — fast, functional, and shipped. React on the front, Node.js on the back, MongoDB in the middle. I've built an AI-powered medical tool, a real-time IoT dashboard, and a few things in between. 280+ LeetCode problems deep, still going.\n\n3rd year B.Tech student by day. Developer by choice. Looking for an internship where I can stop building alone and start building something that matters.`,
 };

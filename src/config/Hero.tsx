@@ -74,7 +74,7 @@ export const heroConfig = {
   title1: 'A Fullstack Developer.',
   title2: 'A Backend Developer.',
   title3: 'A Web Developer.',
-  avatar: '/assets/logo-rounded.png',
+  avatar: '/assets/logo-round.png',
 
   // Skills Configuration
   skills: [
