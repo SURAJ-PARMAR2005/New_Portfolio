@@ -24,4 +24,20 @@ export const quotes = [
     quote: `I’ll take a potato chip… AND EAT IT!`,
     author: 'Light Yagami, Death Note',
   },
+  {
+    quote: `Love is the death of duty.`,
+    author: `Aemon Targaryen, Game Of Thrones`,
+  },
+  {
+    quote: `Kill the boy and let the man be born.`,
+    author: `Aemon Targaryen, Game Of Thrones`,
+  },
+  {
+    quote: `Power is power.`,
+    author: `Cersei Lannister, Game Of Thrones`,
+  },
+  {
+    quote: `Any man who must say 'I am the king' is no true king.`,
+    author: `Tywin Lannister, Game Of Thrones`,
+  },
 ];
