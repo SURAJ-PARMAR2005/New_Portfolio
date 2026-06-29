@@ -1,3 +1,3 @@
 export const resumeConfig = {
-  url: '/resume/SURAJ PARMAR_SDE intern_20260605.pdf',
+  url: '/resume/Suraj_resume_29062026.pdf',
 };
