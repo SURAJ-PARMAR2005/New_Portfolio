@@ -1,5 +1,6 @@
 import Container from '@/components/common/Container';
 import About from '@/components/landing/About';
+import Experience from '@/components/landing/Experience';
 import Github from '@/components/landing/Github';
 import Hero from '@/components/landing/Hero';
 import Leetcode from '@/components/landing/Leetcode';
@@ -16,6 +17,7 @@ export default function page() {
     <Container className="min-h-screen pt-4 pb-16 md:pt-8">
       <Hero />
       <Work />
+      <Experience />
       <About />
       <Github />
       <Leetcode />
